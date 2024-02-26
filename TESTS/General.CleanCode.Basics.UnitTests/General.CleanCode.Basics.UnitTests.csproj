@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<ItemGroup>
+		<ProjectReference Include="../../_SRC/General.CleanCode.Basics/General.CleanCode.Basics.csproj" />
+	</ItemGroup>
+
+</Project>
