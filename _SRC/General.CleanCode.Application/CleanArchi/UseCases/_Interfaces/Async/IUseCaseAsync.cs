@@ -2,5 +2,5 @@
 
 public interface IUseCaseAsync<TUseCaseRequest, TUseCaseResponse>
 {
-    Task<TUseCaseResponse> HandleAsync(TUseCaseRequest request);
+    Task<TUseCaseResponse> HandleAsync(TUseCaseRequest request, CancellationToken cancellationToken);
 }
