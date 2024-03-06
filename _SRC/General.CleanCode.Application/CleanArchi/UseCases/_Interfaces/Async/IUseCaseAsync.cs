@@ -1,6 +1,6 @@
-﻿namespace General.CleanCode.Application.CleanArchi;
+﻿namespace General.CleanCode.Application.CleanArchi.UseCases;
 
 public interface IUseCaseAsync<TUseCaseRequest, TUseCaseResponse>
 {
-    Task<TUseCaseResponse> HandleAsync(TUseCaseRequest request, CancellationToken cancellationToken);
+    Task<TUseCaseResponse> RunAsync(TUseCaseRequest request, CancellationToken cancellationToken);
 }

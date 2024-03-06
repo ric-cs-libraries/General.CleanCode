@@ -3,11 +3,11 @@
 	<PropertyGroup>
 
 		<MyPackageMajorVersion>$(MyGeneralCleanCodeApplication_MajorVersion)</MyPackageMajorVersion>
-		<MyPackageMinorVersion>1</MyPackageMinorVersion>
+		<MyPackageMinorVersion>0</MyPackageMinorVersion>
 		<MyPackagePatchVersion>0</MyPackagePatchVersion>
 
 		<Description>
-			Ajout d'un second paramètre (CancellationToken), à HandleAsync de IUseCasAsync:  HandleAsync(TUseCaseRequest request, CancellationToken cancellationToken)
+			Nouvelle hiérarchie IUseCaseAsync (UseCaseAsync, CommandUseCaseAsync, QueryUseCaseAsync) ; IUseCase (UseCase, CommandUseCase, QueryUseCase), et classe static AsyncErrors.
 		</Description>
 
 	</PropertyGroup>
