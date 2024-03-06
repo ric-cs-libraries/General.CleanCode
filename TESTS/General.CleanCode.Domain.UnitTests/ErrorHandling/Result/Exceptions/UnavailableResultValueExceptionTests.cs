@@ -5,7 +5,7 @@ using General.CleanCode.Domain.ErrorHandling;
 
 namespace General.CleanCode.Domain.ErrorHandling.UnitTests;
 
-public class UnavailableResultValueExceptionUnitTests
+public class UnavailableResultValueExceptionTests
 {
 
     [Fact]
@@ -19,7 +19,7 @@ public class UnavailableResultValueExceptionUnitTests
         var result = ex.Message;
 
         //--- Assert ---
-        var expected = $"Due to the operation failure, the Result value is not available.";
-        Assert.Equal(expected, result);
+        var expectedMessage = UnavailableResultValueException.MESSAGE;
+        Assert.Equal(expectedMessage, result);
     }
 }

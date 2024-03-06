@@ -1,7 +1,7 @@
-﻿using General.CleanCode.Domain.ErrorHandling.UnitTests;
-using System.Diagnostics.CodeAnalysis;
+﻿using General.CleanCode.Domain.DDD;
+using General.CleanCode.Domain.ErrorHandling.UnitTests;
 
-namespace General.CleanCode.Domain.DDD.UnitTests;
+namespace General.CleanCode.Domain.UnitTests.DDD;
 
 
 internal record ValueObject1 : ValueObject
@@ -134,12 +134,13 @@ class MyEntity : Entity<MyIdClass>
     }
 }
 
-class EntityIdNullable : Entity<long?>   //Bizarrement n'empêche pas d'instancier cette classe avec un id null !?
-{
-    public EntityIdNullable(long? id) : base(id)
-    {
-    }
-}
+//class EntityIdNullable : Entity<long?>   //Depuis que j'ai mis <WarningsAsErrors>nullable</WarningsAsErrors> , il devient, à juste titre,
+//                                         // interdit d'avoir un TId nullable, c-à-d que ce n'est plus juste un avertissement !
+//{
+//    public EntityIdNullable(long? id) : base(id)
+//    {
+//    }
+//}
 
 class MyIdClass
 {
@@ -151,12 +152,12 @@ class MyAggregate : AggregateRoot<MyIdClass>
     {
     }
 }
-class MyAggregate2 : AggregateRoot<long?>   //Bizarrement n'empêche pas d'instancier cette classe avec un id null !?
-{
-    public MyAggregate2(long? id) : base(id)
-    {
-    }
-}
+//class MyAggregate2 : AggregateRoot<long?>    //Depuis que j'ai mis <WarningsAsErrors>nullable</WarningsAsErrors> , il devient, à juste titre,
+//{                                            // interdit d'avoir un TId nullable, c-à-d que ce n'est plus juste un avertissement !
+//    public MyAggregate2(long? id) : base(id)
+//    {
+//    }
+//}
 
 class MyDomainEvent : IDomainEvent
 {

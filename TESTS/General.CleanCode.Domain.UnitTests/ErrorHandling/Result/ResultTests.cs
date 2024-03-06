@@ -5,12 +5,9 @@ using General.CleanCode.Domain.ErrorHandling;
 
 namespace General.CleanCode.Domain.ErrorHandling.UnitTests;
 
-public class ResultUnitTests
+public class ResultTests
 {
-    private Error GetError()
-    {
-        return new Error(code: "20", debugMessage: "A");
-    }
+    private static readonly Error ERROR = new Error(code: "20", debugMessage: "A");
 
     [Fact]
     public void ResultOk__ShouldInitializeFieldsCorrectly()
@@ -25,12 +22,11 @@ public class ResultUnitTests
     [Fact]
     public void ResultNotOk__ShouldInitializeFieldsCorrectly()
     {
-        Error error = GetError();
-        Result result = Result.NotOk(error);
+        Result result = Result.NotOk(ERROR);
 
         Assert.False(result.IsSuccess);
         Assert.True(result.IsFailure);
-        Assert.Equal(error, result.Error);
+        Assert.Equal(ERROR, result.Error);
     }
 
     [Fact]
@@ -60,25 +56,23 @@ public class ResultUnitTests
     [Fact]
     public void ResultOfTNotOk__ShouldInitializeFieldsCorrectly()
     {
-        Error error = GetError();
-        Result<MyClass> result = Result<MyClass>.NotOk(error);
+        Result<MyClass> result = Result<MyClass>.NotOk(ERROR);
 
         Assert.False(result.IsSuccess);
         Assert.True(result.IsFailure);
-        Assert.Equal(error, result.Error);
+        Assert.Equal(ERROR, result.Error);
     }
 
     [Fact]
     public void ResultOfTNotOk_WhenTryingToAccessTheValueProperty_ShouldThrowAnUnavailableResultValueException()
     {
-        Error error = GetError();
-        Result<MyClass> result = Result<MyClass>.NotOk(error);
+        Result<MyClass> result = Result<MyClass>.NotOk(ERROR);
 
         var ex = Assert.Throws<UnavailableResultValueException>(() => result.Value);
     }
 
     [Fact]
-    public void ResultOfTImplicitOperator__ShouldConvertValueIntoAResultOfTValue()
+    public void ResultOfTImplicitOperatorForTValue__ShouldConvertValueIntoAResultOfTValue()
     {
         int value = 150;
         Result<int> result = value;
@@ -87,15 +81,41 @@ public class ResultUnitTests
     }
 
     [Fact]
-    public void ResultOfTImplicitOperator__ShouldConvertValueIntoAResultOfTValue_2()
+    public void ResultOfTImplicitOperatorForTValue__ShouldConvertValueIntoAResultOfTValue_2()
     {
         MyClass value = new();
         Result<MyClass> result = value;
 
         Assert.Equal(value, result.Value);
     }
-}
 
+    [Fact]
+    public void ResultOfTImplicitOperatorForError__ShouldConvertIntoAResultOfTValueWithError()
+    {
+        Error error = new("errorCode", "debugMessage", "someFieldName");
+        Result<MyClass> result = error; //Implicit operator :  Error -> Result<T>
+
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.Equal(error, result.Error);
+
+        var ex = Assert.Throws<UnavailableResultValueException>(() => result.Value);
+
+        var expectedMessage = UnavailableResultValueException.MESSAGE;
+        Assert.Equal(expectedMessage, ex.Message);
+    }
+
+    [Fact]
+    public void ResultImplicitOperatorForError__ShouldConvertIntoAResultWithError()
+    {
+        Error error = new("errorCode", "debugMessage", "someFieldName");
+        Result result = error; //Implicit operator :  Error -> Result
+
+        Assert.False(result.IsSuccess);
+        Assert.True(result.IsFailure);
+        Assert.Equal(error, result.Error);
+    }
+}
 
 class MyClass
 {

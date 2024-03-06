@@ -5,7 +5,7 @@ using General.CleanCode.Domain.DDD;
 
 namespace General.CleanCode.Domain.DDD.UnitTests;
 
-public class IdCannotBeSetToNullExceptionUnitTests
+public class IdCannotBeSetToNullExceptionTests
 {
 
     [Fact]

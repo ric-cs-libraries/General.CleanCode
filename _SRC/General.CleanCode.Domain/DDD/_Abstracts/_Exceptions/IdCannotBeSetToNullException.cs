@@ -1,6 +1,4 @@
-
 namespace General.CleanCode.Domain.DDD;
-
 
 public class IdCannotBeSetToNullException : Exception
 {

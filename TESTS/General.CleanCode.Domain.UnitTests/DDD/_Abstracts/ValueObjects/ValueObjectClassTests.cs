@@ -3,9 +3,9 @@
 using General.CleanCode.Domain.DDD;
 
 
-namespace General.CleanCode.Domain.DDD.UnitTests;
+namespace General.CleanCode.Domain.UnitTests.DDD;
 
-public class ClassValueObjectUnitTests
+public class ClassValueObjectTests
 {
     [Fact]
     public void Equality_WhenEqualAndExactSameType_ShouldBeTrue()

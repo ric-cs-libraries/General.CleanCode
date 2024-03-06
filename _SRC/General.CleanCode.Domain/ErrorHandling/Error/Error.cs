@@ -1,4 +1,4 @@
-﻿
+﻿using General.Basics.Extensions;
 
 using General.CleanCode.Domain.DDD;
 
@@ -9,9 +9,9 @@ public record Error : ValueObject
 {
     public string Code { get; }
     public string DebugMessage { get; }
-    public string? RelatedFieldName { get; }
+    public string RelatedFieldName { get; }
 
-    public Error(string code, string debugMessage, string? relatedFieldName = null)
+    public Error(string code, string debugMessage = "", string relatedFieldName = "")
     {
         Code = code.Trim();
         if (Code == string.Empty)
@@ -23,5 +23,26 @@ public record Error : ValueObject
         RelatedFieldName = relatedFieldName;
     }
 
-    public static implicit operator string(Error error) => error.Code;
+    public override string ToString()
+    {
+        List<string> infos = new()
+        {
+            $"Error '{Code}'"
+        };
+
+        if (!DebugMessage.IsEmptyOrOnlySpaces_())
+        {
+            infos.Add($" : {DebugMessage}");
+        }
+
+        if (!RelatedFieldName.IsEmptyOrOnlySpaces_())
+        {
+            infos.Add($" (relatedFieldName : '{RelatedFieldName}')");
+        }
+
+        var result = string.Join("", infos);
+        return result;
+    }
+
+    public static implicit operator string(Error error) => error.ToString();
 }

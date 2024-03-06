@@ -5,7 +5,7 @@ using General.CleanCode.Domain.ErrorHandling;
 
 namespace General.CleanCode.Domain.ErrorHandling.UnitTests;
 
-public class ErrorCodeIsRequiredExceptionUnitTests
+public class ErrorCodeIsRequiredExceptionTests
 {
 
     [Fact]
@@ -19,7 +19,7 @@ public class ErrorCodeIsRequiredExceptionUnitTests
         var result = ex.Message;
 
         //--- Assert ---
-        var expected = ErrorCodeIsRequiredException.MESSAGE;
-        Assert.Equal(expected, result);
+        var expectedMessage = ErrorCodeIsRequiredException.MESSAGE;
+        Assert.Equal(expectedMessage, result);
     }
 }

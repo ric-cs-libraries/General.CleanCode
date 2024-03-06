@@ -4,9 +4,9 @@
 using General.CleanCode.Domain.DDD;
 
 
-namespace General.CleanCode.Domain.DDD.UnitTests;
+namespace General.CleanCode.Domain.UnitTests.DDD;
 
-public class EntityUnitTests
+public class EntityTests
 {
     [Fact]
     public void Instanciation__ShouldInitializeCorrectlyTheId()
@@ -20,14 +20,14 @@ public class EntityUnitTests
         Assert.Equal(idClassObj, e.Id);
     }
 
-    #region Id non nullable
-    [Fact]
-    public void Instanciation_WhenTIdNullableAndIdNull_ShouldThrowAnIdCannotBeSetToNullException()
-    {
-        var ex = Assert.Throws<IdCannotBeSetToNullException>(() => new EntityIdNullable(null));
+    //#region Id non nullable
+    //[Fact]
+    //public void Instanciation_WhenTIdNullableAndIdNull_ShouldThrowAnIdCannotBeSetToNullException()
+    //{
+    //    var ex = Assert.Throws<IdCannotBeSetToNullException>(() => new EntityIdNullable(null));
 
-    }
-    #endregion Id non nullable
+    //}
+    //#endregion Id non nullable
 
     #region Equals
     [Fact]
@@ -112,7 +112,7 @@ public class EntityUnitTests
         Entity3? e3 = null;
         MyClass4? e = null;
 
-        Assert.True(e1 == e3);
+        Assert.True(e1! == e3!);
         //Assert.True(e == e1); //Interdit
     }
 
@@ -123,7 +123,7 @@ public class EntityUnitTests
         Entity3? e3 = null;
         MyClass4? e = null;
 
-        Assert.False(e1 == e3);
+        Assert.False(e1 == e3!);
         //Assert.False(e == e1); //Interdit
     }
 
@@ -201,7 +201,7 @@ public class EntityUnitTests
         Entity3? e3 = null;
         MyClass4? e = null;
 
-        Assert.False(e1 != e3);
+        Assert.False(e1! != e3!);
         //Assert.False(e != e1); //Interdit
     }
 
@@ -212,7 +212,7 @@ public class EntityUnitTests
         Entity3? e3 = null;
         MyClass4? e = null;
 
-        Assert.True(e1 != e3);
+        Assert.True(e1 != e3!);
         //Assert.True(e != e1); //Interdit
     }
 

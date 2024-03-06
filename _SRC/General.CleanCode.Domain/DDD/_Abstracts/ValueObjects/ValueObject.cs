@@ -1,6 +1,6 @@
 ﻿namespace General.CleanCode.Domain.DDD;
 
 
-public record ValueObject
+public abstract record ValueObject
 {
 }

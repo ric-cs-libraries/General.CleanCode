@@ -1,7 +1,7 @@
 ﻿namespace General.CleanCode.Domain.DDD;
 
 public abstract class Entity<TId>
-    where TId: notnull
+    where TId : notnull
 {
     public TId Id { get; protected set; }
 
@@ -27,7 +27,7 @@ public abstract class Entity<TId>
             return false;
 
         //if (Id is null || e2.Id is null)
-            //return false;
+        //return false;
 
         return Id.Equals(e2.Id);
     }
@@ -58,7 +58,7 @@ public abstract class Entity<TId>
         Type type = GetType();
 
         //if (type.ToString().Contains("Castle.Proxies."))   //Violation de SoC, mais le jeu en vaut la chandelle
-            //return type.BaseType!;
+        //return type.BaseType!;
 
         return type;
     }

@@ -4,9 +4,9 @@
 using General.CleanCode.Domain.DDD;
 
 
-namespace General.CleanCode.Domain.DDD.UnitTests;
+namespace General.CleanCode.Domain.UnitTests.DDD;
 
-public class AggregateRootUnitTests
+public class AggregateRootTests
 {
     [Fact]
     public void AggregateRootOfT__ShouldHaveEntityOfTAsDirectParentClass()
@@ -24,14 +24,14 @@ public class AggregateRootUnitTests
         Assert.Equal(id, a1.Id);
     }
 
-    #region Id non nullable
-    [Fact]
-    public void Instanciation_WhenTIdNullableAndIdNull_ShouldThrowAnIdCannotBeSetToNullException()
-    {
-        var ex = Assert.Throws<IdCannotBeSetToNullException>(() => new MyAggregate2(null));
+    //#region Id non nullable
+    //[Fact]
+    //public void Instanciation_WhenTIdNullableAndIdNull_ShouldThrowAnIdCannotBeSetToNullException()
+    //{
+    //    var ex = Assert.Throws<IdCannotBeSetToNullException>(() => new MyAggregate2(null));
 
-    }
-    #endregion Id non nullable
+    //}
+    //#endregion Id non nullable
 
     #region Domain events
     [Fact]
