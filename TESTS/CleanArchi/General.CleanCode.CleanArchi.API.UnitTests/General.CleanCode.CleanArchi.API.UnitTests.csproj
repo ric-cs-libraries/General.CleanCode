@@ -1,7 +1,0 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<ItemGroup>
-		<ProjectReference Include="../../../_SRC/CleanArchi/General.CleanCode.CleanArchi.API/General.CleanCode.CleanArchi.API.csproj" />
-	</ItemGroup>
-
-</Project>
