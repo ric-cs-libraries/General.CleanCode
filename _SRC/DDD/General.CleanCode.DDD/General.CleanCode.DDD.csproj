@@ -7,7 +7,7 @@
 		<MyPackagePatchVersion>0</MyPackagePatchVersion>
 
 		<Description><!-- Mettre ici en 1 ligne (même longue), le descriptif des nouveautés, pour cette nouvelle version du Package Nuget -->
-			ECLATAGE / Renommage projets(et v1.0) / Chgt arbo. : on ne garde auj. que DDD/ (General.CleanCode.DDD)   et CleanArchitecture/(General.CleanCode.CleanArchitecture.API et General.CleanCode.CleanArchitecture.Application), le ErrorHandling ayant été déplacé dans General.Basics/ErrorHandling.
+			General.CleanCode.DDD: EntityId ofT : ajout  contrainte "struct" sur T.
 		</Description>
 
 	</PropertyGroup>
