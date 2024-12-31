@@ -1,5 +1,4 @@
-﻿
-using General.CleanCode.DDD;
+﻿using General.CleanCode.DDD.Interfaces.Entities;
 
 
 namespace General.CleanCode.DDD.UnitTests;

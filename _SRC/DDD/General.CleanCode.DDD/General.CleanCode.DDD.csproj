@@ -15,7 +15,7 @@
 	<Import Project="$(MyCommonCsProjSrcPath)/SetVersions.csproj" /><!-- Affectation de <PackageVersion> et <Version> -->
 
 	<ItemGroup>
-		<PackageReference Include="General.Basics" Version="$(MyGeneralBasics_MajorVersion).$(MyDependenciesVersionWildcard)"/>
+		<PackageReference Include="General.Basics" Version="$(MyGeneralBasics_MajorVersion).$(MyDependenciesVersionWildcard)" />
 	</ItemGroup>
 
 </Project>
