@@ -1,6 +1,6 @@
-﻿using Xunit;
-
-using General.CleanCode.DDD.Interfaces.Entities;
+﻿using General.CleanCode.DDD.Abstracts;
+using General.CleanCode.DDD.Interfaces;
+using Xunit;
 
 
 namespace General.CleanCode.DDD.UnitTests;
@@ -55,7 +55,7 @@ public class AggregateRootTests
         Assert.Equal(1, a1.DomainEvents.Count);
 
         a1.DoThat();
-        Assert.Equal(1+1, a1.DomainEvents.Count);
+        Assert.Equal(1 + 1, a1.DomainEvents.Count);
 
         Assert.IsAssignableFrom<IDomainEvent>(a1.DomainEvents.First());
         Assert.IsAssignableFrom<IDomainEvent>(a1.DomainEvents.Last());

@@ -1,4 +1,4 @@
-﻿namespace General.CleanCode.DDD;
+﻿namespace General.CleanCode.DDD.Abstracts;
 
 public abstract class Entity<TId>
     where TId : notnull

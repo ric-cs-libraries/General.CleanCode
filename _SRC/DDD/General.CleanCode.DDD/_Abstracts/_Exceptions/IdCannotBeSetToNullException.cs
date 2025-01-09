@@ -1,4 +1,4 @@
-namespace General.CleanCode.DDD;
+namespace General.CleanCode.DDD.Abstracts;
 
 public class IdCannotBeSetToNullException : Exception
 {

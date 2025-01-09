@@ -1,4 +1,6 @@
-﻿namespace General.CleanCode.DDD;
+﻿using General.CleanCode.DDD.Abstracts;
+
+namespace General.CleanCode.DDD;
 
 public record GuidEntityId : EntityId<Guid>
 {
@@ -6,6 +8,6 @@ public record GuidEntityId : EntityId<Guid>
     {
     }
     public GuidEntityId(Guid value) : base(value)
-	{
-	}
+    {
+    }
 }

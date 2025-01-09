@@ -1,4 +1,4 @@
-﻿namespace General.CleanCode.DDD;
+﻿namespace General.CleanCode.DDD.Abstracts;
 
 
 
@@ -28,7 +28,7 @@ public abstract class ClassValueObject
 
     protected abstract IEnumerable<object> GetMembersToCompare();
 
-    private bool ValuesAreEqual(ClassValueObject valueObject) => 
+    private bool ValuesAreEqual(ClassValueObject valueObject) =>
         (GetType() == valueObject.GetType()) && GetMembersToCompare().SequenceEqual(valueObject.GetMembersToCompare());
 
     public override int GetHashCode() =>

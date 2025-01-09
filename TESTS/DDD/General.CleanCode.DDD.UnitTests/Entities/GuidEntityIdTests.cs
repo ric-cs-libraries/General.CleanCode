@@ -1,5 +1,4 @@
-﻿using General.CleanCode.DDD;
-using Xunit;
+﻿using Xunit;
 
 
 namespace General.CleanCode.DDD.UnitTests;
@@ -12,7 +11,7 @@ public class GuidEntityIdTests
         //--- Act ---
         Guid guid = Guid.NewGuid();
         GuidEntityId geId = new(guid);
-        
+
         //--- Assert ---
         Assert.NotEmpty(geId.Value.ToString());
         Assert.Equal(geId.Value, guid);

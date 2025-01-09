@@ -1,9 +1,6 @@
 ﻿using Xunit;
 
 
-using General.CleanCode.DDD;
-
-
 namespace General.CleanCode.DDD.UnitTests;
 
 public class EntityTests

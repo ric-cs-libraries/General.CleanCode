@@ -1,4 +1,4 @@
-﻿namespace General.CleanCode.DDD.Interfaces.Entities;
+﻿namespace General.CleanCode.DDD.Interfaces;
 
 
 public interface IDomainEvent

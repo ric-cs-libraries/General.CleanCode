@@ -1,6 +1,6 @@
-﻿using General.CleanCode.DDD.Interfaces.Entities;
+﻿using General.CleanCode.DDD.Interfaces;
 
-namespace General.CleanCode.DDD;
+namespace General.CleanCode.DDD.Abstracts;
 
 
 public abstract class AggregateRoot<TId> : Entity<TId>

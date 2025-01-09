@@ -1,6 +1,5 @@
+using General.CleanCode.DDD.Abstracts;
 using Xunit;
-
-using General.CleanCode.DDD;
 
 
 namespace General.CleanCode.DDD.UnitTests;
