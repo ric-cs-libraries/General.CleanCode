@@ -3,11 +3,11 @@
 	<PropertyGroup>
 
 		<MyPackageMajorVersion>$(MyGeneralCleanCodeDDD_MajorVersion)</MyPackageMajorVersion>
-		<MyPackageMinorVersion>0</MyPackageMinorVersion>
+		<MyPackageMinorVersion>1</MyPackageMinorVersion>
 		<MyPackagePatchVersion>0</MyPackagePatchVersion>
 
 		<Description><!-- Mettre ici en 1 ligne (même longue), le descriptif des nouveautés, pour cette nouvelle version du Package Nuget -->
-			General.CleanCode.DDD: EntityId ofT : ajout  contrainte "struct" sur T.
+			General.CleanCode.DDD: ajout abstract record ValueObject of TValue.
 		</Description>
 
 	</PropertyGroup>
