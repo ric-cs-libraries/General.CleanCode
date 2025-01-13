@@ -1,7 +1,6 @@
 ﻿using General.CleanCode.DDD.Abstracts;
 using General.CleanCode.DDD.Interfaces;
 
-
 namespace General.CleanCode.DDD.UnitTests;
 
 internal record ValueObject1 : ValueObject
@@ -161,7 +160,7 @@ class MyAggregate : AggregateRoot<MyIdClass>
 
 class MyDomainEvent : IDomainEvent
 {
-
+    public DateTime CreationDateUtc => throw new NotImplementedException();
 }
 class MyAggregateEventRaiser : AggregateRoot<string>   //Bizarrement n'empêche pas d'instancier cette classe avec un id null !?
 {

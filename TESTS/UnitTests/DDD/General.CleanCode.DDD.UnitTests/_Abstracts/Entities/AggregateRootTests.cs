@@ -62,18 +62,22 @@ public class AggregateRootTests
     }
 
     [Fact]
-    public void ClearEvents__ShouldClearTheDomainEventsList()
+    public void PopEvents__ShouldReturnTheDomainEventsListAndClearIt()
     {
         string id = "";
         MyAggregateEventRaiser a1 = new(id);
         a1.DoThat();
         a1.DoThat();
 
-        Assert.NotNull(a1.DomainEvents);
-        Assert.NotEmpty(a1.DomainEvents);
         Assert.Equal(1 + 1, a1.DomainEvents.Count);
+        IReadOnlyList<IDomainEvent> saveDomainEvents = a1.DomainEvents;
 
-        a1.ClearEvents();
+        //
+        IReadOnlyList<IDomainEvent> domainEvents = a1.PopEvents();
+
+        //
+        Assert.Equal(1 + 1, domainEvents.Count);
+        Assert.Equal(saveDomainEvents, domainEvents);
         Assert.Empty(a1.DomainEvents);
     }
     #endregion Domain events

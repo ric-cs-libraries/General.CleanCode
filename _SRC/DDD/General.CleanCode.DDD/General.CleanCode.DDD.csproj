@@ -6,10 +6,14 @@
 		<MyPackageMinorVersion>0</MyPackageMinorVersion>
 		<MyPackagePatchVersion>0</MyPackagePatchVersion>
 
-		<Description><!-- Mettre ici en 1 ligne (même longue), le descriptif des nouveautés, pour cette nouvelle version du Package Nuget -->
-			General.CleanCode.DDD v4.0: ajout membre CreationDateUtc à IDomainEvent, et ajout abstract class: DomainEvent. No test.
+		<Description>
+           General.CleanCode.DDD v4.0 :
+             - ajout membre CreationDateUtc à IDomainEvent, 
+               et ajout abstract class: DomainEvent. No test.
+             - AggregateRoot :
+               .suppr. méthode ClearEvents, remplacée par PopEvents.
+               .mise en protected de RaiseEvent.
 		</Description>
-
 	</PropertyGroup>
 
 	<Import Project="$(MyCommonCsProjSrcPath)/SetVersions.csproj" /><!-- Affectation de <PackageVersion> et <Version> -->
