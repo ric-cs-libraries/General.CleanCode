@@ -3,11 +3,11 @@
 	<PropertyGroup>
 
 		<MyPackageMajorVersion>$(MyGeneralCleanCodeDDD_MajorVersion)</MyPackageMajorVersion>
-		<MyPackageMinorVersion>2</MyPackageMinorVersion>
+		<MyPackageMinorVersion>0</MyPackageMinorVersion>
 		<MyPackagePatchVersion>0</MyPackagePatchVersion>
 
 		<Description><!-- Mettre ici en 1 ligne (même longue), le descriptif des nouveautés, pour cette nouvelle version du Package Nuget -->
-			General.CleanCode.DDD v3.2: update General.Basics version (et ajout TESTS/UnitTests/ folder).
+			General.CleanCode.DDD v4.0: ajout membre CreationDateUtc à IDomainEvent, et ajout abstract class: DomainEvent. No test.
 		</Description>
 
 	</PropertyGroup>
