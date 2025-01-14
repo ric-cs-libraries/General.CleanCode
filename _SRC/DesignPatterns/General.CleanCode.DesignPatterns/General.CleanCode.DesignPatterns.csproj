@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+
+		<MyPackageMajorVersion>$(MyGeneralCleanCodeDesignPatterns_MajorVersion)</MyPackageMajorVersion>
+		<MyPackageMinorVersion>0</MyPackageMinorVersion>
+		<MyPackagePatchVersion>0</MyPackagePatchVersion>
+
+		<Description>
+		</Description>
+	</PropertyGroup>
+
+	<Import Project="$(MyCommonCsProjSrcPath)/SetVersions.csproj" /><!-- Affectation de <PackageVersion> et <Version> -->
+
+	<ItemGroup>
+		<PackageReference Include="General.Basics" Version="$(MyGeneralBasics_MajorVersion).$(MyDependenciesVersionWildcard)" />
+    <PackageReference Include="General.Basics.ReflectionExtended" Version="$(MyGeneralBasicsReflectionExtended_MajorVersion).$(MyDependenciesVersionWildcard)" />
+	</ItemGroup>
+	
+</Project>
