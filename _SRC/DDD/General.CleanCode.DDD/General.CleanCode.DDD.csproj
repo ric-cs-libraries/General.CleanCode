@@ -7,12 +7,8 @@
 		<MyPackagePatchVersion>0</MyPackagePatchVersion>
 
 		<Description>
-           General.CleanCode.DDD v4.0 :
-             - ajout membre CreationDateUtc à IDomainEvent, 
-               et ajout abstract class: DomainEvent. No test.
-             - AggregateRoot :
-               .suppr. méthode ClearEvents, remplacée par PopEvents.
-               .mise en protected de RaiseEvent.
+			v$(MyGeneralBasics_MajorVersion).$(MyPackageMinorVersion).$(MyPackagePatchVersion) :
+			Passage en .NET8
 		</Description>
 	</PropertyGroup>
 

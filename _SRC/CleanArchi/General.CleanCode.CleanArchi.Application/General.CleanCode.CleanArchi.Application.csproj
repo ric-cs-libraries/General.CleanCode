@@ -7,7 +7,8 @@
 		<MyPackagePatchVersion>0</MyPackagePatchVersion>
 
 		<Description>
-			ECLATAGE / Renommage projets(et v1.0) / Chgt arbo. : on ne garde auj. que DDD/ (General.CleanCode.DDD)   et CleanArchitecture/(General.CleanCode.CleanArchitecture.API et General.CleanCode.CleanArchitecture.Application), le ErrorHandling ayant été déplacé dans General.Basics/ErrorHandling.
+			v$(MyGeneralBasics_MajorVersion).$(MyPackageMinorVersion).$(MyPackagePatchVersion) :
+			Passage en .NET8
 		</Description>
 
 	</PropertyGroup>
@@ -15,7 +16,7 @@
 	<Import Project="$(MyCommonCsProjSrcPath)/SetVersions.csproj" /><!-- Affectation de <PackageVersion> et <Version> -->
 
 	<ItemGroup>
-		<PackageReference Include="General.Basics" Version="$(MyGeneralBasics_MajorVersion).$(MyDependenciesVersionWildcard)"/>
+		<PackageReference Include="General.Basics" Version="$(MyGeneralBasics_MajorVersion).$(MyDependenciesVersionWildcard)" />
 	</ItemGroup>
 
 </Project>
