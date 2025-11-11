@@ -70,7 +70,7 @@ public class QueryUseCaseTests
 
 
         var ex = Assert.Throws<UnavailableResultValueException>(() => result.Value);
-        var expectedMessage = UnavailableResultValueException.MESSAGE;
+        var expectedMessage = string.Format(UnavailableResultValueException.MESSAGE, result.ToString());
         Assert.Equal(expectedMessage, ex.Message);
     }
 
@@ -198,7 +198,7 @@ public class QueryUseCaseTests
 
 
         var ex = Assert.Throws<UnavailableResultValueException>(() => result.Value);
-        var expectedMessage = UnavailableResultValueException.MESSAGE;
+        var expectedMessage = string.Format(UnavailableResultValueException.MESSAGE, result.ToString());
         Assert.Equal(expectedMessage, ex.Message);
     }
 
